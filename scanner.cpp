@@ -92,8 +92,8 @@ void Scanner::scanFinished()
 void Scanner::sensorValuesUpdated(const QString& macAddress, const EulerReading& euler)
 {
 //    QTextStream stream(&data_dbg);
-//    qDebug()<<macAddress<<";"<<euler.timestamp<<";"<< euler.x<<";"<<euler.y<<";"<<euler.z;
+    qDebug()<<macAddress<<";"<<euler.timestamp<<";"<< euler.x<<";"<<euler.y<<";"<<euler.z;
 
-    stream<<macAddress<<";"<<euler.timestamp<<";"<<euler.x<<";"<< euler.y <<";"<<euler.z<<"\n";
+//    stream<<macAddress<<";"<<euler.timestamp<<";"<<euler.x<<";"<< euler.y <<";"<<euler.z<<"\n";
 
 }
