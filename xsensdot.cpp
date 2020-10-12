@@ -217,9 +217,9 @@ void XsensDot::measurementServiceResetOrientation(QLowEnergyDescriptor d, QByteA
 void XsensDot::convertDeviceData(QByteArray &data)
 {
     euler.timestamp = toQInt32(data.mid(0,4), QDataStream::LittleEndian);
-    euler.x = qFromBigEndian<float>(data.mid(4,4));
-    euler.y = qFromBigEndian<float>(data.mid(8,4));
-    euler.z = qFromBigEndian<float>(data.mid(12,4));
+    euler.x = qFromLittleEndian<float>(data.mid(4,4));
+    euler.y = qFromLittleEndian<float>(data.mid(8,4));
+    euler.z = qFromLittleEndian<float>(data.mid(12,4));
     qDebug()<<getMacAddress()<<";"<<euler.timestamp<<";"<< euler.x<<";"<<euler.y<<";"<<euler.z;
     emit eulerUpdated(getMacAddress(), euler);
 }
